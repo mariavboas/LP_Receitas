@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Cadastro de Notas de Alunos</title>
+</head>
+
+<nav id='nav-bar'> 
+    <ul id="nav-list">
+        <a href="/cadreceitas">
+        <li>
+            Insira receitas
+        </li>
+        </a>
+        <a href="/home">
+        <li>
+            Visualize receitas
+        </li>
+        </a>
+        <a href="/login">
+            <li>
+                Login
+            </li>
+        </a>
+    </ul>
+</nav>
+
+<body>
+    <section id="mainpage">
+        <h1>Cadastro de Notas de Alunos</h1>
+        <form method="POST" action="/cadreceitas">
+            <div class="input_field">
+            <label for="titulo">Titulo:</label>
+            <input type="text" name="aluno_id" required><br>
+            </div>
+
+            <div class="input_field">
+            <label for="tags">Tags:</label>
+            <input type="text" name="tags" required><br>
+            </div>
+
+            <div class="input_field">
+            <label for="conteudo">Receita:</label>
+            <input type="text" name="conteudo" required><br>
+            </div>
+
+            <button type="submit">Cadastrar Receita</button>
+        </form>
+        <p>{{ get_flashed_messages() }}</p>
+        <button onclick="window.location.href='/home'">Voltar</button>
+    </section>
+</body>
+</html>

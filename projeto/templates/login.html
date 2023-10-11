@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Login</title>
+</head>
+
+<nav id='nav-bar'> 
+    <ul id="nav-list">
+        <a href="/login">
+        <li>
+            Login
+        </li>
+        </a>
+        <a href="/cadastro">
+        <li>
+            Cadastro
+        </li>
+        </a>
+    </ul>
+</nav>
+
+<body>
+    <section id="mainpage">
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <div class="input_field">
+            <label for="username">Usuário:</label>
+            <input type="text" name="username" required><br>
+            </div>
+            
+            <div class="input_field">
+            <label for="password">Senha:</label>
+            <input type="password" name="password" required><br>
+            </div>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        <p>{{ get_flashed_messages() }}</p>
+
+        <button onclick="window.location.href='/cadastro'">Cadastre-se</button>
+    </section>
+</body>
+</html>

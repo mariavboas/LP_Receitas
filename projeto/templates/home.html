@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Receitas</title>
+</head>
+
+<nav id='nav-bar'> 
+    <ul id="nav-list">
+        <a href="/cadreceitas">
+        <li>
+            Insira receitas
+        </li>
+        </a>
+        <a href="/home">
+        <li>
+            Visualize receitas
+        </li>
+        </a>
+        <a href="/login">
+            <li>
+                Login
+            </li>
+        </a>
+    </ul>
+</nav>
+
+<body>
+    <section id="mainpage">
+        <h1>Receitas</h1>
+        {% for receita in receitas %}
+        
+            <h2 class="titulo_receita">{{ receita.titulo }}</h2>
+            <h4 class="id_usuario">{{ receita.userid }}</p>
+
+            {% for tag in receita.tags}
+                {{ receita.tags.tag }}
+            {% endfor %}
+
+            <p class="texto_receita">{{ receita.conteudo }}</p>
+        
+        {% endfor %} 
+        <button onclick="window.location.href='/cadreceitas'">Cadastrar Receita</button>
+    </section>
+</body>
+</html>
