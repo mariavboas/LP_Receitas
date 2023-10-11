@@ -1,0 +1,1 @@
+Project for the course EEL670, presenting a website of webscrapping recipes using Flask.
