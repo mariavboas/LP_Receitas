@@ -67,7 +67,7 @@ def cadreceitas():
 
     return render_template('cadreceitas.html')
 
-@app.route('/home', methods=['GET'])
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     app.logger.info('Solicitação recebida na rota /login')
     receitas = mongo.db.receitas.find()

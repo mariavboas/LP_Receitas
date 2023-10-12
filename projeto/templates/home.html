@@ -34,8 +34,8 @@
             <h2 class="titulo_receita">{{ receita.titulo }}</h2>
             <h4 class="id_usuario">{{ receita.userid }}</p>
 
-            {% for tag in receita.tags}
-                {{ receita.tags.tag }}
+            {% for tag in receita.tags %}
+                {{ tag }}
             {% endfor %}
 
             <p class="texto_receita">{{ receita.conteudo }}</p>
