@@ -25,22 +25,30 @@
         </a>
     </ul>
 </nav>
-
 <body>
+    <form method="GET" action="/home">
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" value="{{ search_name }}">
+        </div>
+        <div>
+            <label for="tags">Tags:</label>
+            <input type="text" name="tags" value="{{ search_tags }}">
+        </div>
+        <div>
+            <button type="submit">Pesquisar</button>
+        </div>
+    </form>
     <section id="mainpage">
         <h1>Receitas</h1>
         {% for receita in receitas %}
-        
             <h2 class="titulo_receita">{{ receita.titulo }}</h2>
-            <h4 class="id_usuario">{{ receita.userid }}</p>
-
-            {% for tag in receita.tags %}
-                {{ tag }}
-            {% endfor %}
-
+            <h4 class="id_usuario">{{ receita.userid }}</h4>
+            
+            <p class="tags_receita">Tags: {{ receita.tags }}</p>
+            
             <p class="texto_receita">{{ receita.conteudo }}</p>
-        
-        {% endfor %} 
+        {% endfor %}
         <button onclick="window.location.href='/cadreceitas'">Cadastrar Receita</button>
     </section>
 </body>

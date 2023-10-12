@@ -69,6 +69,19 @@ def cadreceitas():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    app.logger.info('Solicitação recebida na rota /login')
-    receitas = mongo.db.receitas.find()
-    return render_template('home.html', receitas=receitas)
+    app.logger.info('Solicitação recebida na rota /home')
+    
+    # Obtenha os parâmetros de pesquisa da URL
+    search_name = request.args.get('name', default='', type=str)
+    search_tags = request.args.get('tags', default='', type=str)
+    
+    # Filtrar as receitas com base nos parâmetros de pesquisa
+    query = {}
+    if search_name:
+        query['titulo'] = {'$regex': search_name, '$options': 'i'}
+    if search_tags:
+        query['tags'] = {'$regex': search_tags, '$options': 'i'}
+    
+    receitas = mongo.db.receitas.find(query)
+    
+    return render_template('home.html', receitas=receitas, search_name=search_name, search_tags=search_tags)
