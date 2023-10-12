@@ -71,17 +71,17 @@ def cadreceitas():
 def home():
     app.logger.info('Solicitação recebida na rota /home')
     
-    # Obtenha os parâmetros de pesquisa da URL
-    search_name = request.args.get('name', default='', type=str)
-    search_tags = request.args.get('tags', default='', type=str)
+    # Obtenha o filtro de tag da URL
+    selected_tag = request.args.get('tag', default='', type=str)
     
-    # Filtrar as receitas com base nos parâmetros de pesquisa
+    # Consulta no banco de dados
     query = {}
-    if search_name:
-        query['titulo'] = {'$regex': search_name, '$options': 'i'}
-    if search_tags:
-        query['tags'] = {'$regex': search_tags, '$options': 'i'}
+    if selected_tag:
+        query['tags'] = {'$regex': selected_tag, '$options': 'i'}
     
     receitas = mongo.db.receitas.find(query)
     
-    return render_template('home.html', receitas=receitas, search_name=search_name, search_tags=search_tags)
+    # Obtenha uma lista de todas as tags disponíveis no banco de dados
+    all_tags = [receita['tags'] for receita in mongo.db.receitas.find()]
+    
+    return render_template('home.html', receitas=receitas, selected_tag=selected_tag, all_tags=all_tags)

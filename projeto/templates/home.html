@@ -25,21 +25,23 @@
         </a>
     </ul>
 </nav>
+
 <body>
-    <form method="GET" action="/home">
-        <div>
-            <label for="name">Nome:</label>
-            <input type="text" name="name" value="{{ search_name }}">
-        </div>
-        <div>
-            <label for="tags">Tags:</label>
-            <input type="text" name="tags" value="{{ search_tags }}">
-        </div>
-        <div>
-            <button type="submit">Pesquisar</button>
-        </div>
-    </form>
     <section id="mainpage">
+        <form method="GET" action="/home">
+            <div>
+                <label for="tag">Filtrar por Tag:</label>
+                <select name="tag">
+                    <option value="">Todas as Tags</option>
+                    {% for tag in all_tags %}
+                        <option value="{{ tag }}" {% if tag == selected_tag %}selected{% endif %}>{{ tag }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Filtrar</button>
+            </div>
+        </form>
         <h1>Receitas</h1>
         {% for receita in receitas %}
             <h2 class="titulo_receita">{{ receita.titulo }}</h2>
