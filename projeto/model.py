@@ -1,5 +1,5 @@
 # banco de dados
-from projeto import mongo
+from app import mongo
 
 class User:
     def __init__(self, username, password):

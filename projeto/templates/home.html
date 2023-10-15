@@ -28,19 +28,29 @@
 
 <body>
     <section id="mainpage">
+        <form method="GET" action="/home">
+            <div>
+                <label for="tag">Filtrar por Tag:</label>
+                <select name="tag">
+                    <option value="">Todas as Tags</option>
+                    {% for tag in all_tags %}
+                        <option value="{{ tag }}" {% if tag == selected_tag %}selected{% endif %}>{{ tag }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Filtrar</button>
+            </div>
+        </form>
         <h1>Receitas</h1>
         {% for receita in receitas %}
-        
             <h2 class="titulo_receita">{{ receita.titulo }}</h2>
-            <h4 class="id_usuario">{{ receita.userid }}</p>
-
-            {% for tag in receita.tags}
-                {{ receita.tags.tag }}
-            {% endfor %}
-
+            <h4 class="id_usuario">{{ receita.userid }}</h4>
+            
+            <p class="tags_receita">Tags: {{ receita.tags }}</p>
+            
             <p class="texto_receita">{{ receita.conteudo }}</p>
-        
-        {% endfor %} 
+        {% endfor %}
         <button onclick="window.location.href='/cadreceitas'">Cadastrar Receita</button>
     </section>
 </body>
