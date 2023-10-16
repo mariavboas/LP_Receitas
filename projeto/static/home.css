@@ -29,17 +29,18 @@ body {
 }
 
 /* Estilo para os títulos das receitas */
-.titulo_receita {
+.titulo-receita {
+    font-weight: bold;
     color: #f77998;
 }
 
 /* Estilo para os IDs dos usuários */
-.id_usuario {
+.id-usuario {
     color: #655242;
 }
 
 /* Estilo para o texto das receitas */
-.texto_receita {
+.texto-receita {
     color: #655242;
 }
 
@@ -56,7 +57,7 @@ button {
 
 /* Estilo de hover para o botão */
 button:hover {
-    background-color: #bc9b7d; /* Altera a cor de fundo ao passar o mouse sobre o botão */
+    background-color: #bc9b7d;
 }
 
 /* Estilo para links */
@@ -66,5 +67,27 @@ a {
 }
 
 a:hover {
-    text-decoration: underline; /* Sublinha o link ao passar o mouse sobre ele */
+    text-decoration: underline;
+}
+
+/* Estilo para os cards de receitas */
+.receita-card {
+    width: 45%;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fffce6;
+    border: 1px solid #8b4513;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.receita-card.expandido {
+    width: 90%;
+}
+
+/* Estilo para o conteúdo da receita */
+.texto-receita {
+    display: none;
+    color: #655242;
 }
