@@ -1,7 +1,7 @@
 /* Estilo para centralizar o Login */
 #mainpage {
-    max-width: 600px; /* Define a largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo na tela */
+    max-width: 600px;
+    margin: 0 auto;
     background-color: #fff8e7;
 }
 
@@ -46,7 +46,7 @@ input[type="password"] {
 
 /* Estilo para o botão de entrar */
 button[type="submit"] {
-    background-color: #7e6651; /* Marrom claro */
+    background-color: #7e6651;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -55,12 +55,13 @@ button[type="submit"] {
 
 /* Estilo para o botão de cadastro */
 button {
-    background-color: #7e6651; /* Bege médio */
+    background-color: #7e6651;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 /* Estilo de hover */

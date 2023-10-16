@@ -1,9 +1,9 @@
 /* Estilo para centralizar a seção de receitas */
 #mainpage {
-    max-width: 600px; /* Define a largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo na tela */
+    max-width: 600px;
+    margin: 0 auto;
     background-color: #fff8e7;
-    padding: 20px; /* Adiciona algum espaço interno ao redor do conteúdo */
+    padding: 20px;
 }
 
 /* Estilo para o corpo da página */
@@ -30,27 +30,28 @@ body {
 
 /* Estilo para os títulos das receitas */
 .titulo_receita {
-    color: #f77998; /* Rosa médio */
+    color: #f77998;
 }
 
 /* Estilo para os IDs dos usuários */
 .id_usuario {
-    color: #655242; /* Marrom escuro */
+    color: #655242;
 }
 
 /* Estilo para o texto das receitas */
 .texto_receita {
-    color: #655242; /* Marrom escuro */
+    color: #655242;
 }
 
 /* Estilo para o botão de cadastrar receita */
 button {
-    background-color: #7e6651; /* Marrom claro */
+    background-color: #7e6651;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 /* Estilo de hover para o botão */
